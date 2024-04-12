@@ -1,4 +1,5 @@
 The code for a diverse hyperspectral remote sensing image generation method with diffusion models for paper "Diverse Hyperspectral Remote Sensing Image Synthesis With Diffusion Models". 
+
 Please cite the following paper:
 @article{liu2023diverse,
   title={Diverse Hyperspectral Remote Sensing Image Synthesis With Diffusion Models},
@@ -9,14 +10,17 @@ Please cite the following paper:
   year={2023},
   publisher={IEEE}
 }
+
 The method consists of two stages: one is the conditional VQGAN and the other is the diffusion process in latent space.
 
 Conduct the diverse hyperspectral generation by running generation_infer.py, with the options setting in options/base_options.py and options/infer_options.py.
 
 When you need to train the conditional VQGAN, python generation_train.py, with the options setting in options/base_options.py and options/train_options.py.
+
 After the training of the conditional VQGAN, python generation_test.py, with options/test_options.py, setting the 'test_flag' as 'train_mini' and 'test_mini' respectively, to get the latent code of each image for training process of the latent diffusion model.
 
 When training the latent diffusion model, python image_train.py.
+
 When testing the latent code generation results, python image_samples.py.
 
 The conditional VQGAN model is saved in results/20230407_latent16, the diffusion model is saved in results/20230517_atten. The model can be downloaded with the link:
